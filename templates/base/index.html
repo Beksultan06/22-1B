@@ -40,32 +40,6 @@
                     <ul class="main-menu" data-stagger-appear="fade-down" data-stagger-delay="75">
                         <li class="current-menu-parent">
                             <a href="#">Home</a>
-                            <ul class="sub-menu">
-                                <li class="current-menu-item">
-                                    <a href="index.html">Home 01</a>
-                                </li>
-                                <li>
-                                    <a href="home02.html">Home 02</a>
-                                </li>
-                                <li>
-                                    <a href="home03.html">Home 03</a>
-                                </li>
-                                <li>
-                                    <a href="home04.html">Home 04</a>
-                                </li>
-                                <li>
-                                    <a href="home05.html">Home 05</a>
-                                </li>
-                                <li>
-                                    <a href="home06.html">Home 06</a>
-                                </li>
-                                <li>
-                                    <a href="home07.html">Home 07</a>
-                                </li>
-                                <li>
-                                    <a href="home08.html">Home 08</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="#">About Us</a>
@@ -216,64 +190,37 @@
                 <div class="stg-bottom-gap-l">
                     <h2 data-appear="fade-up" data-unload="fade-up">{{ settings_id.title2 }}</h2>
                 </div>
+                {% for news in news_all %}
                 <!-- Step 01 Row -->
-                <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
-                    <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
-                        <div class="bringer-parallax-media">
-                            <img class="bringer-lazy" src="{% static 'img/null.png' %}" data-src="img/home/step01.jpg" alt="Step 01" width="960" height="960">
+                    <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
+                        <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
+                            <div class="bringer-parallax-media">
+                                <img class="bringer-lazy" src="{{ news.image.url }}" data-src="" alt="Step 01" width="960" height="960">
+                            </div>
+                        </div>
+                        <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                            <span class="bringer-label">Step 01</span>
+                            <h4>{{ news.title }}</h4>
+                            <p><span class="bringer-highlight">{{ news.title2 }}</span>{{ news.text1 }}</p>
+                            <p><span class="bringer-highlight">{{ news.title3 }}</span>{{ news.text2 }}</p>
                         </div>
                     </div>
-                    <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
-                        <span class="bringer-label">Step 01</span>
-                        <h4>Unleash Your Vision</h4>
-                        <p><span class="bringer-highlight">Deep Dive Discovery:</span> We'll immerse ourselves in your world, exploring your unique story, target audience, and aspirations. This is where we uncover the heart of your brand and unearth the spark that sets you apart.</p>
-                        <p><span class="bringer-highlight">Strategic Exploration:</span> We'll conduct thorough research, analyze your competitors, and identify opportunities to position your brand for success. This is where we map out the terrain and chart a course toward your goals.</p>
-                    </div>
-                </div>
-                <!-- Step 02 Row -->
-                <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
-                    <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
-                        <div class="bringer-parallax-media">
-                            <img class="bringer-lazy" src="{% static 'img/null.png' %}" data-src="img/home/step02.jpg" alt="Step 02" width="960" height="960">
+                    <!-- Step 02 Row -->
+                    <div class="stg-row stg-bottom-gap stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l" data-unload="fade-right">
+                        <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                            <div class="bringer-parallax-media">
+                                <img class="bringer-lazy" src="{{ news.image2.url }}" data-src="" alt="" width="960" height="960">
+                            </div>
                         </div>
-                    </div>
-                    <div class="stg-col-6 stg-tp-col-6" data-appear="fade-left" data-delay="100">
-                        <span class="bringer-label">Step 02</span>
-                        <h4>Tailor-Made Masterpiece</h4>
-                        <p><span class="bringer-highlight">Brand Identity Creation:</span> We'll craft a visual identity that embodies your essence, from logo design to color palettes to typography. This is where we create a cohesive look and feel that resonates with your audience.</p>
-                        <p><span class="bringer-highlight">Compelling Content Development:</span> We'll weave captivating stories and craft messaging that speaks to the hearts and minds of your customers. This is where we create content that connects, engages, and inspires action.</p>
-                    </div>
-                    <div class="stg-col-3"><!-- Empty Column --></div>
-                </div>
-                <!-- Step 03 Row -->
-                <div class="stg-row stg-bottom-gap stg-valign-middle stg-m-bottom-gap-l" data-unload="fade-left">
-                    <div class="stg-col-3 stg-offset-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-right">
-                        <div class="bringer-parallax-media">
-                            <img class="bringer-lazy" src="{% static 'img/null.png' %}" data-src="img/home/step03.jpg" alt="Step 03" width="960" height="960">
+                        <div class="stg-col-6 stg-tp-col-6" data-appear="fade-left" data-delay="100">
+                            <span class="bringer-label">Step 02</span>
+                            <h4>{{ news.title4 }}</h4>
+                            <p><span class="bringer-highlight">{{ news.title5 }}</span> {{ news.text3 }}</p>
+                            <p><span class="bringer-highlight">{{ news.title6 }}</span>{{ news.text4 }}</p>
                         </div>
+                        <div class="stg-col-3"><!-- Empty Column --></div>
                     </div>
-                    <div class="stg-col-6 stg-tp-col-6" data-appear="fade-right" data-delay="100">
-                        <span class="bringer-label">Step 03</span>
-                        <h4>Flawless Execution</h4>
-                        <p><span class="bringer-highlight">Expert Collaboration:</span> We'll work hand-in-hand with you, ensuring every detail aligns with your vision and exceeds expectations. This is where we bring together our diverse expertise to create something truly remarkable.</p>
-                        <p><span class="bringer-highlight">Meticulous Production:</span> We'll handle the technical aspects with precision, from seamless web development to high-quality graphic production. This is where we turn concepts into tangible realities, pixel-perfect and ready to shine.</p>
-                    </div>
-                </div>
-                <!-- Step 04 Row -->
-                <div class="stg-row stg-valign-middle stg-tp-row-reverse" data-unload="fade-right">
-                    <div class="stg-col-3 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
-                        <div class="bringer-parallax-media">
-                            <img class="bringer-lazy" src="{% static 'img/null.png' %}" data-src="img/home/step04.jpg" alt="Step 04" width="960" height="960">
-                        </div>
-                    </div>
-                    <div class="stg-col-6 stg-tp-col-6" data-appear="fade-left" data-delay="100">
-                        <span class="bringer-label">Step 04</span>
-                        <h4>Launch &amp; Beyond</h4>
-                        <p><span class="bringer-highlight">Strategic Launch:</span> We'll unveil your brand to the world with a tailored launch strategy that generates excitement and drives engagement. This is where we create a buzz and make your presence known.</p>
-                        <p><span class="bringer-highlight">Ongoing Optimization:</span> We'll monitor your progress, analyze data, and make continuous adjustments to ensure your brand stays ahead of the curve. This is where we embrace growth and adaptation.</p>
-                    </div>
-                    <div class="stg-col-3"><!-- Empty Column --></div>
-                </div>
+                {% endfor %}
             </section>
 
             <!-- Section: About Us -->
